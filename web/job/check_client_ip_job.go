@@ -156,7 +156,7 @@ func (j *CheckClientIpJob) processLogFile() bool {
 
 	for clientEmail, ips := range InboundClientIps {
 		inboundClientIps, err := j.getInboundClientIps(clientEmail)
-		sort.Strings(ips)
+		#sort.Strings(ips)
 		if err != nil {
 			j.addInboundClientIps(clientEmail, ips)
 		} else {
@@ -307,7 +307,7 @@ func (j *CheckClientIpJob) updateInboundClientIps(inboundClientIps *model.Inboun
 		}
 	}
 
-	sort.Strings(j.disAllowedIps)
+	#sort.Strings(j.disAllowedIps)
 
 	if len(j.disAllowedIps) > 0 {
 		logger.Debug("disAllowedIps:", j.disAllowedIps)
